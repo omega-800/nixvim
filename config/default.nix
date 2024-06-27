@@ -2,8 +2,6 @@
 with lib; {
   imports = [ ./lsp ./git ./style ./utils ./cmp ./opts ./autocmd ];
   enableMan = true;
-  viAlias = true;
-  vimAlias = true;
   editorconfig.enable = true;
   clipboard.register = "unnamedplus";
   extraConfigVim = ''
