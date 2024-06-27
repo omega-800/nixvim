@@ -1,5 +1,5 @@
 {
-  hooks = [
+  keymaps = [
     # Default
     {
       mode = "n";
