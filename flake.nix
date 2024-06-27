@@ -13,7 +13,7 @@
   outputs = { self, nixpkgs, flake-utils, nixvim }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        config = import ./nixvim;
+        config = import ./config;
         pkgs = import nixpkgs { inherit system; };
         nixvimLib = nixvim.lib.${system};
         nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
@@ -33,7 +33,10 @@
           };
         };
 
-        packages = { default = nvim; };
+        packages = { 
+          default = nvim; 
+
+        };
 
         devShells.default = import ./shell.nix { inherit pkgs; };
       });
