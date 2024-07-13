@@ -31,7 +31,7 @@
           name = "A nixvim configuration";
         };
 
-        inherit (nixvim) homeManagerModules;
+        homeManagerModules.nixvim = nixvim.homeManagerModules.nixvim;
 
         packages.default = nvim;
 
