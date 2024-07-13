@@ -26,17 +26,14 @@
         };
       in
       {
-        checks = {
-          default = nixvimLib.check.mkTestDerivationFromNvim {
-            inherit nvim;
-            name = "A nixvim configuration";
-          };
+        checks.default = nixvimLib.check.mkTestDerivationFromNvim {
+          inherit nvim;
+          name = "A nixvim configuration";
         };
 
-        packages = { 
-          default = nvim; 
+        inherit (nixvim) homeManagerModules;
 
-        };
+        packages.default = nvim;
 
         devShells.default = import ./shell.nix { inherit pkgs; };
       });
